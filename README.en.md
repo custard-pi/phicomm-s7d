@@ -4,7 +4,7 @@
 
 # `phicomm-s7d`: Local Server for Phicomm S7
 
-`phicomm-s7d` is a local server for the Phicomm S7 body composition scale. It emulates the original cloud TCP service on the local network, stores measurement results, and provides a web dashboard that does not depend on any external resources.
+`phicomm-s7d` is a local server for the Phicomm S7 body composition scale. It emulates the original cloud TCP service on the local network, stores weight and body fat measurement results, and provides a web dashboard that does not depend on any external resources.
 
 The final program is a statically linked ARM64 executable with the HTML, CSS, JavaScript, and favicon embedded directly into the binary, making it suitable for ARMv8 OpenWrt/ImmortalWrt routers.
 
@@ -14,7 +14,7 @@ Phicomm is a trademark of its respective owner. **_This project is an independen
 
 ## Features
 
-- Measurement result viewing
+- Weight & body fat (%) result viewing
 - Trend charts
 - History storage and CSV export
 - Dark mode
@@ -306,13 +306,13 @@ For a 64-byte `0x8062` measurement frame:
 
 When the sixth impedance channel is within the `250–800 Ω` range, the program uses the BIA fat-free mass regression equations published by Sun et al. The general form used in the code is:
 
-$$
+```math
 FFM = a + b \frac{height^2}{resistance} + c \cdot weight + d \cdot resistance
-$$
-
-$$
+```
+FFM stands for Fat-Free Mass
+```math
 body\_fat_{\%} = \left(1 - \frac{FFM}{weight}\right) \times 100
-$$
+```
 
 Height is measured in cm, weight in kg, and resistance in $\Omega$. The coefficients used are:
 
