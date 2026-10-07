@@ -48,6 +48,12 @@ Run the following in an SSH terminal on the router:
 wget -O /tmp/install-phicomm-s7.sh "https://raw.githubusercontent.com/custard-pi/phicomm-s7d/main/install-openwrt.sh" && ash /tmp/install-phicomm-s7.sh
 ```
 
+Or you can use this command to install from Gitee mirror:
+
+```sh
+wget -O /tmp/install-phicomm-s7.sh "https://gitee.com/custard-pi/phicomm-s7d/raw/main/install-openwrt.sh" && GITEE_INSTALL=1 ash /tmp/install-phicomm-s7.sh
+```
+
 To install a specific version, run `RELEASE_TAG=v1.0 ash /tmp/install-phicomm-s7.sh`.
 
 The firewall backup is saved at the reported `/tmp/firewall-phicomm-s7-*.backup` path;

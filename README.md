@@ -51,6 +51,12 @@ Phicomm（斐讯）是其相应权利人的商标。**_本项目为独立的非�
 wget -O /tmp/install-phicomm-s7.sh "https://raw.githubusercontent.com/custard-pi/phicomm-s7d/main/install-openwrt.sh" && ash /tmp/install-phicomm-s7.sh
 ```
 
+也可以用这条命令从 Gitee 镜像安装：
+
+```sh
+wget -O /tmp/install-phicomm-s7.sh "https://gitee.com/custard-pi/phicomm-s7d/raw/main/install-openwrt.sh" && GITEE_INSTALL=1 ash /tmp/install-phicomm-s7.sh
+```
+
 指定版本可运行 `RELEASE_TAG=v1.0 ash /tmp/install-phicomm-s7.sh`。
 
 防火墙备份保存在脚本输出的 `/tmp/firewall-phicomm-s7-*.backup` 路径，重启前可复制留存。
